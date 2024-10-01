@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Todo {
+public class TodoEntity {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
