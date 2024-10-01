@@ -24,12 +24,12 @@ public class TodoEntity {
         this.description = description;
         this.status = status;
         this.createdAT = createAT;
-
     }
 
     public TodoEntity() {
 
     }
+
 
     public Long getId() {
         return id;
