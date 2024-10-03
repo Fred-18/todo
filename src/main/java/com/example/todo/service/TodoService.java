@@ -1,5 +1,6 @@
 package com.example.todo.service;
 
+import com.example.todo.controller.BodyForRequestBody;
 import com.example.todo.model.Status;
 import com.example.todo.model.TodoEntity;
 import com.example.todo.repositoty.TodoRepository;
@@ -23,7 +24,6 @@ public class TodoService {
         todo.setStatus(Status.PENDING);
         todo.setCreatedAT(new Date());
         return todoRepository.save(todo);
-
     }
 
     public List<TodoEntity> getAllTodo() {
@@ -50,5 +50,7 @@ public class TodoService {
         todoRepository.deleteById(id);
         }
 
-    }
+
+
+}
 
