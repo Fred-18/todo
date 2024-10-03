@@ -25,4 +25,12 @@ public void saveTodo(@RequestBody BodyForRequestBody body){
     public Iterable<TodoEntity>getAllTodo(){
     return todoService.getAllTodo();
 }
+
+
+@DeleteMapping ("/{id}")
+public void deleteTodo(@PathVariable("id")int id){
+     todoService.deleteTodoById(id);
+
+}
+
 }

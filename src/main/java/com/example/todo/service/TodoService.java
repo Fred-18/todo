@@ -30,11 +30,11 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
-    public Optional<TodoEntity> getTodoById(Long id){
+    public Optional<TodoEntity> getTodoById(int id){
         return todoRepository.findById(id);
     }
 
-    public TodoEntity updateTodo(Long id,String title,String description,Status status) {
+    public TodoEntity updateTodo(int id,String title,String description,Status status) {
         Optional<TodoEntity> todoOpt = todoRepository.findById(id);
         if (todoOpt.isPresent()) {
             TodoEntity todo = todoOpt.get();
@@ -46,7 +46,7 @@ public class TodoService {
             throw new RuntimeException("Todo not found");
         }
     }
-        public void deleteTodoById(Long id){
+        public void deleteTodoById(int id){
         todoRepository.deleteById(id);
         }
 
