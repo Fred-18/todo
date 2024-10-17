@@ -1,6 +1,6 @@
 package com.example.todo.service;
 
-import com.example.todo.controller.BodyForRequestBody;
+import com.example.todo.controller.UpdateTodoJson;
 import com.example.todo.model.Status;
 import com.example.todo.model.TodoEntity;
 import com.example.todo.repositoty.TodoRepository;
@@ -25,7 +25,6 @@ public class TodoService {
         todo.setCreatedAT(new Date());
         return todoRepository.save(todo);
     }
-
     public List<TodoEntity> getAllTodo() {
         return todoRepository.findAll();
     }
@@ -34,23 +33,25 @@ public class TodoService {
         return todoRepository.findById(id);
     }
 
-    public TodoEntity updateTodo(int id,String title,String description,Status status) {
+    public TodoEntity updateTodo(int id,String title,String description,Date updateAt) {
         Optional<TodoEntity> todoOpt = todoRepository.findById(id);
         if (todoOpt.isPresent()) {
             TodoEntity todo = todoOpt.get();
             todo.setTitle(title);
             todo.setDescription(description);
-            todo.setStatus(status);
+            todo.setCreatedAT(updateAt);
             return todoRepository.save(todo);
+
         } else {
             throw new RuntimeException("Todo not found");
         }
     }
-        public void deleteTodoById(int id){
+    public void deleteTodoById(int id){
         todoRepository.deleteById(id);
         }
 
 
 
 }
+
 

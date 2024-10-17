@@ -1,10 +1,10 @@
 package com.example.todo.controller;
 
-public class BodyForRequestBody {
+public class TodoJson {
     private String title;
     private String description;
 
-    public BodyForRequestBody(String title,String description){
+    public TodoJson(String title, String description){
         this.title=title;
         this.description=description;
     }
